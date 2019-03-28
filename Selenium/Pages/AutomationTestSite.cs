@@ -17,8 +17,9 @@ namespace Selenium.Pages
 
         public AutomationTestSite()
         {
+            //WebDriver = new ChromeDriver(@"C:\Users\rupertf\Desktop\chromedriver");
             WebDriver = new ChromeDriver();
-            BaseUrl = "http://automationpractice.com/index.php";
+            BaseUrl = "https://www.sitekit.net/";
             Pages = InitializePages();
         }
 
@@ -27,9 +28,7 @@ namespace Selenium.Pages
             return new Collection<TestPage>
             {
 				new HomePage(WebDriver),
-				new SignInPage(WebDriver),
-				new CreateAccountPage(WebDriver),
-                new MyAccountPage(WebDriver)
+
             };
         }
 
@@ -58,46 +57,17 @@ namespace Selenium.Pages
             return Pages.FirstOrDefault(page => page.Name.Equals(pageName));
         }
 
-        public bool DoesElementExistOnPage(PageName pageName, Element element)
+        async public void ClickLink(PageName pageName, String link)
         {
-            var locator = GetPage(pageName).GetLocator(element);
-            try
-            {
-                WebDriver.FindElement(locator.FindBy);
-            }
-            catch (NoSuchElementException noSuchElementException)
-            {
-                return false;
-            }
-            return true;
-        }
-
-        public void ClickElementOnPage(PageName pageName, Element element)
-        {
-            var locator = GetPage(pageName).GetLocator(element);
-            WebDriver.FindElement(locator.FindBy).Click();
+            //var locator = GetPage(pageName).GetLocator(element);
+            WebDriver.FindElement(By.LinkText(link)).Click();
             System.Threading.Thread.Sleep(5000);
         }
 
-        public void EnterTextIntoInputField(PageName pageName, Element element, string text)
+        public bool ConfirmTextPresent(PageName pageName, string text)
         {
-            var locator = GetPage(pageName).GetLocator(element);
-            WebDriver.FindElement(locator.FindBy).SendKeys(text);
-        }
-
-        public void SelectDropDownOption(PageName pageName, Element element, string optionToSelect)
-        {
-            var locator = GetPage(pageName).GetLocator(element);
-            var selectOptionList = WebDriver.FindElement(locator.FindBy).FindElements(By.TagName("option"));
-            foreach (IWebElement option in selectOptionList)
-            {
-                if (option.Text.Equals(optionToSelect))
-                {
-                    option.Click();
-                    return;
-                }
-            }
-            throw new InvalidSelectorException($"{element} option of {optionToSelect} not found");
+            return WebDriver.FindElement(By.Id("contact")).Text.Contains(text);
+          
         }
 
         public void Dispose()

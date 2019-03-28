@@ -11,7 +11,6 @@ namespace SpecFlow.Hooks
     {
         private readonly IObjectContainer objectContainer;
         private AutomationTestSite automationTestSite;
-        private User user;
 
         public WebDriverSupport(IObjectContainer objectContainer)
         {
@@ -22,9 +21,7 @@ namespace SpecFlow.Hooks
         public void InitializeWebDriver()
         {
             automationTestSite = new AutomationTestSite();
-            user = new User();
-            objectContainer.RegisterInstanceAs(automationTestSite);         
-            objectContainer.RegisterInstanceAs(user);
+            objectContainer.RegisterInstanceAs(automationTestSite);
         }
 
         [AfterScenario]

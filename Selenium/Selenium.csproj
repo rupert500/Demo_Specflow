@@ -48,15 +48,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pages\CreateAccountPage.cs" />
     <Compile Include="Pages\HomePage.cs" />
-    <Compile Include="Pages\MyAccountPage.cs" />
-    <Compile Include="Pages\SignInPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Support\Enums.cs" />
-    <Compile Include="Support\Locator.cs" />
     <Compile Include="Support\TestPage.cs" />
-    <Compile Include="Support\User.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pages\AutomationTestSite.cs" />

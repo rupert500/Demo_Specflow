@@ -1,0 +1,6 @@
+C:\Users\rupertf\Documents\TestProject\.vs\SpecFlowSelenium\lut\0\b\Selenium\bin\Debug\Selenium.dll
+C:\Users\rupertf\Documents\TestProject\.vs\SpecFlowSelenium\lut\0\b\Selenium\bin\Debug\Selenium.pdb
+C:\Users\rupertf\Documents\TestProject\.vs\SpecFlowSelenium\lut\0\i\Selenium\Debug\Selenium.csprojResolveAssemblyReference.cache
+C:\Users\rupertf\Documents\TestProject\.vs\SpecFlowSelenium\lut\0\i\Selenium\Debug\Selenium.csproj.CoreCompileInputs.cache
+C:\Users\rupertf\Documents\TestProject\.vs\SpecFlowSelenium\lut\0\i\Selenium\Debug\Selenium.dll
+C:\Users\rupertf\Documents\TestProject\.vs\SpecFlowSelenium\lut\0\i\Selenium\Debug\Selenium.pdb

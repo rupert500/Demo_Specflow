@@ -11,17 +11,8 @@ namespace Selenium.Pages
         {
             Setup(webDriver);
             Name = PageName.Home;
-            Url = "http://automationpractice.com/index.php";
+            Url = "http://sitekit.net";
         }
 
-        protected sealed override Collection<Locator> InitializeLocators()
-        {
-            return new Collection<Locator>
-            {
-                new Locator(Element.SignInLink, By.XPath("//*[@id=\"header\"]/div[2]/div/div/nav/div[1]/a"))
-            };
-        }
-
-        
     }
 }

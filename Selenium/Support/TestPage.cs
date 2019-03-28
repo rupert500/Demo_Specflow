@@ -9,25 +9,12 @@ namespace Selenium.Support
     {
         public PageName Name { get; protected set; }
         protected ChromeDriver WebDriver;
-        protected Collection<Locator> Locators;
         public string Url { get; protected set; }
 
         protected void Setup(ChromeDriver webDriver)
         {
             WebDriver = webDriver;
-            Locators = InitializeLocators();
         }
 
-        protected abstract Collection<Locator> InitializeLocators();
-
-        public Locator GetLocator(Element element)
-        {
-            return Locators.FirstOrDefault(locator => locator.Element.Equals(element));
-        }
-
-        public virtual bool IsAt()
-        {
-            return WebDriver.Url.Equals(Url);
-        }
     }
 }
